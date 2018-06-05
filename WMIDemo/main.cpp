@@ -9,12 +9,6 @@ void wmi_loop();
 
 int _tmain(int argc, _TCHAR* argv[]) 
 {
-	/*CSynQueryData recvnotify(L"root\\CIMV2", L"SELECT Caption FROM Win32_Process");
-	recvnotify.ExcuteFun();*/
-	//while (1) {
-	//	wmi_step();
-	//	//Sleep(1000);
-	//}
 	while (true) {
 		wmi_loop();
 	}
