@@ -24,7 +24,7 @@ void wmi_loop() {
 		if (wmi.ExecQuery(L"select * from Win32_Processor")) {
 			//cout << "wmibase query success" << endl;
 			wstring ret;
-			if (wmi.GetProperty(L"LoadPercentage", ret)) {
+			if (wmi.GetProperty(L"CurrentClockSpeed", ret)) {
 				wcout << ret << endl;
 			}
 			else {
