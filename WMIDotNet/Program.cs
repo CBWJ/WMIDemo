@@ -43,14 +43,21 @@ namespace WMIDotNet
             //}
             //ShowManagementClassProperites("Win32_Processor");
 
-            WMIMemoryInfo memoInfo = new WMIMemoryInfo();
-            WMICPUInfo cpuInfo = new WMICPUInfo();
-            while (true)
+            try
             {
-                //Console.WriteLine("占用率：{0}", memoInfo.UsedSizeRate);
-                //Console.WriteLine(WMIBase.GetManagementObjectPropertyValue("Win32_PerfFormattedData_PerfProc_Process", "PercentProcessorTime"));
-                Console.WriteLine("{0}\t", cpuInfo.UsageRate);
-                Thread.Sleep(500);
+                WMIMemoryInfo memoInfo = new WMIMemoryInfo();
+                WMICPUInfo cpuInfo = new WMICPUInfo();
+                while (true)
+                {
+                    //Console.WriteLine("占用率：{0}", memoInfo.UsedSizeRate);
+                    //Console.WriteLine(WMIBase.GetManagementObjectPropertyValue("Win32_PerfFormattedData_PerfProc_Process", "PercentProcessorTime"));
+                    Console.WriteLine("{0}\t", cpuInfo.UsageRate);
+                    Thread.Sleep(500);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
 
             Console.ReadKey();
